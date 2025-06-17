@@ -3,31 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | NFT preview card component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    body {
+      font-family: 'Outfit', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      font-size: 18px;
+      background-color: hsl(217, 54%, 11%);
+    }
+
+    h3 {
+      color: hsl(0, 0%, 100%);
+    }
+
+    .main {
+        background-color: hsl(216, 50%, 16%);
+        width: 300px;
+        height: 550px;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .eth {
+      width: 300px;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+    
   </style>
 </head>
 <body>
 
-  Equilibrium #3429
 
-  Our Equilibrium collection promotes balance and calm.
+  <div class="main">
 
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
+    <img src="images/image-equilibrium.jpg" alt="foto" class="eth"> 
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <h3>Equilibrium #3429</h3>
+
+    <p style="color: hsl(215, 51%, 70%);">Our Equilibrium collection promotes balance and calm.</p>
+    
+    <div class="count" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <div style="display: flex; align-items: center;">
+        <img src="images/icon-ethereum.svg" alt="" style="display: inline;">
+        <p style="color: hsl(178, 100%, 50%); margin: 0 0 0 3px;">0.041 ETH</p>
+      </div>
+
+      <div style="display: flex; align-items: center;">
+        <img src="images/icon-clock.svg" alt="" style="display: inline;">
+        <p style="color: hsl(215, 51%, 70%); margin: 0 0 0 3px;">3 days left</p>
+      </div>
+    </div>
+    
+    <hr>
+
+    <div>
+      <div style="display: flex; align-items: center;">
+        <img src="images/image-avatar.png" style="border: 2px solid hsl(0, 0%, 100%); border-radius: 50%; width: 30px; display: inline;">
+        <p style="color: hsl(0, 0%, 100%); margin-left: 8px;">
+          <span style="color: hsl(215, 51%, 70%);">Creation of</span> Jules Wyvern
+        </p>
+      </div>
+    </div>
+
   </div>
+
 </body>
 </html>
