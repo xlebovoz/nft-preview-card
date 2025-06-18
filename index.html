@@ -16,29 +16,90 @@
       justify-content: center;
       align-items: center;
       margin: 0;
+      height: 100vh;
       font-size: 18px;
       background-color: hsl(217, 54%, 11%);
     }
 
     h3 {
       color: hsl(0, 0%, 100%);
+      display: inline;
+    }
+
+    h3:hover {
+      color: hsl(178, 100%, 50%);
+      cursor: pointer;
     }
 
     .main {
         background-color: hsl(216, 50%, 16%);
         width: 300px;
-        height: 550px;
-        padding: 20px;
+        height: 535px;
+        padding: 25px;
         border-radius: 20px;
     }
 
-    .eth {
+    /* Стиль для контейнера */
+    .eth-container {
+      position: relative;
+      display: inline-block;
       width: 300px;
+      height: auto;
+      margin-bottom: 20px;
       border-radius: 10px;
-      display: block;
-      margin: 0 auto;
     }
-    
+
+    .eth {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .eth-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 255, 255, 0.3);
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+    }
+
+    .eth-container:hover::after {
+      opacity: 1;
+    }
+
+    .overlay-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: auto;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .eth-container:hover .overlay-icon {
+      opacity: 1;
+    }
+
+    .name {
+      color: hsl(0, 0%, 100%); 
+    }
+
+    .name:hover {
+      color: hsl(178, 100%, 50%);
+      cursor: pointer;
+    }
+
+
+
   </style>
 </head>
 <body>
@@ -46,31 +107,34 @@
 
   <div class="main">
 
-    <img src="images/image-equilibrium.jpg" alt="foto" class="eth"> 
+    <div class="eth-container">
+      <img src="images/image-equilibrium.jpg" alt="foto" class="eth">
+      <img src="images/icon-view.svg" alt="view icon" class="overlay-icon">
+    </div>
 
     <h3>Equilibrium #3429</h3>
 
     <p style="color: hsl(215, 51%, 70%);">Our Equilibrium collection promotes balance and calm.</p>
     
-    <div class="count" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <div class="count" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; margin-top: 20px;">
       <div style="display: flex; align-items: center;">
-        <img src="images/icon-ethereum.svg" alt="" style="display: inline;">
+        <img src="images/icon-ethereum.svg" alt="eth" style="display: inline;">
         <p style="color: hsl(178, 100%, 50%); margin: 0 0 0 3px;">0.041 ETH</p>
       </div>
 
       <div style="display: flex; align-items: center;">
-        <img src="images/icon-clock.svg" alt="" style="display: inline;">
+        <img src="images/icon-clock.svg" alt="clock" style="display: inline;">
         <p style="color: hsl(215, 51%, 70%); margin: 0 0 0 3px;">3 days left</p>
       </div>
     </div>
     
-    <hr>
+    <hr style="border: none; height: 1px; background-color: hsl(215, 32%, 27%);">
 
     <div>
       <div style="display: flex; align-items: center;">
-        <img src="images/image-avatar.png" style="border: 2px solid hsl(0, 0%, 100%); border-radius: 50%; width: 30px; display: inline;">
-        <p style="color: hsl(0, 0%, 100%); margin-left: 8px;">
-          <span style="color: hsl(215, 51%, 70%);">Creation of</span> Jules Wyvern
+        <img src="images/image-avatar.png" style="border: 1px solid hsl(0, 0%, 100%); border-radius: 50%; width: 30px; display: inline;">
+        <p style="color: hsl(215, 51%, 70%); margin-left: 8px;">
+          Creation of <span class="name">Jules Wyvern</span>
         </p>
       </div>
     </div>
